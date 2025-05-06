@@ -63,3 +63,5 @@ lerna-debug.log*
 .husky
 /.vs/*
 logs
+.wwebjs_auth/*
+sessions/
