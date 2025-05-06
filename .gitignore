@@ -1,0 +1,65 @@
+# compiled output
+dist
+documentation
+node_modules
+client
+build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.vscode
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VS
+.vs/*
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Env's
+
+
+.env*
+.env.local
+.env.development
+.env.production
+.env.prod
+
+/sample
+
+/uploads
+
+*.ppk
+*.pem
+*.pub
+/uploads
+
+/.vs/CMakeWorkspaceSettings.json
+.husky
+/.vs/*
+logs
