@@ -67,6 +67,10 @@ if (fs.existsSync(SESSIONS_DIR)) {
    });
 }
 
+app.get("/", async (req, res) => {
+   return res.status(200).send("Server is up and running 😊");
+});
+
 // GET /qr/:userId → returns QR or status
 app.get("/qr/:userId", async (req, res) => {
    const userId = req.params.userId;
