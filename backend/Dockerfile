@@ -15,13 +15,12 @@ COPY . .
 
 # Install necessary dependencies for Puppeteer
 RUN apt-get update && apt-get install -y \
-    libatk-1.0-0 \
+    libatk1.0-0 \
     libcups2 \
     libx11-xcb1 \
     libgdk-pixbuf2.0-0 \
     libnss3 \
     libxss1 \
-    libgdk-pixbuf2.0-0 \
     libasound2 \
     libatk-bridge2.0-0 \
     libnspr4 \
