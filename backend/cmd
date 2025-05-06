@@ -1,0 +1,9 @@
+docker build -t whatsapp-backend .
+
+docker ps -a
+
+docker stop <>
+
+docker rm <>
+
+docker run -d --name whatsapp-backend -p 5000:5000 whatsapp-backend
