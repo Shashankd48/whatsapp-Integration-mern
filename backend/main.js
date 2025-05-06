@@ -1,5 +1,5 @@
 const express = require("express");
-const { Client, LocalAuth } = require("whatsapp-web.js");
+const { Client, LocalAuth } = require("   ");
 const QRCode = require("qrcode");
 const cors = require("cors");
 const fs = require("fs");
@@ -25,7 +25,10 @@ const createClient = (userId) => {
          clientId: userId,
          dataPath: SESSIONS_DIR,
       }),
-      puppeteer: { headless: true },
+      puppeteer: {
+         headless: true,
+         args: ["--no-sandbox", "--disable-setuid-sandbox"], // Add these arguments
+      },
    });
 
    client.on("qr", (qr) => {
