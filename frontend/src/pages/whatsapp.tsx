@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const host = import.meta.env.VITE_BACKEND;
+
 function WhatsApp() {
    const [userId, setUserId] = useState("");
    const [entered, setEntered] = useState(false);
@@ -13,7 +15,7 @@ function WhatsApp() {
    const fetchQr = async () => {
       if (!userId) return;
       try {
-         const res = await axios.get(`http://localhost:5000/qr/${userId}`);
+         const res = await axios.get(`${host}/qr/${userId}`);
          if (res.data.status === "authenticated") {
             setConnected(true);
             setQr(null);
@@ -29,7 +31,7 @@ function WhatsApp() {
    const checkStatus = async () => {
       if (!userId) return;
       try {
-         const res = await axios.get(`http://localhost:5000/status/${userId}`);
+         const res = await axios.get(`${host}/status/${userId}`);
          setConnected(res.data.status === "authenticated");
       } catch (error) {
          console.error("Status check failed:", error);
@@ -40,7 +42,7 @@ function WhatsApp() {
       if (!number || !message) return alert("Enter number and message");
       setSending(true);
       try {
-         await axios.post("http://localhost:5000/send", {
+         await axios.post(`${host}/send`, {
             userId,
             number,
             message,
