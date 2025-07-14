@@ -121,10 +121,16 @@ app.post("/send", async (req, res) => {
 
    const formattedNumber = number.includes("@c.us") ? number : `${number}@c.us`;
 
+   console.log(formattedNumber, message);
+
    try {
-      await client.sendMessage(formattedNumber, message);
+      const messageRes = await client.sendMessage(formattedNumber, message);
+
+      console.log("Messagees", messageRes);
+
       res.json({ success: true, message: "Message sent" });
    } catch (err) {
+      console.log(err);
       res.status(500).json({
          error: "Failed to send message",
          details: err.message,
